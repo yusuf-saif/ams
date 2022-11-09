@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>SURWASH</title>
+    <title>FACILITY MANAGEMENT SYSTEM</title>
     <!-- Favicon-->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
@@ -32,7 +32,7 @@
     <link href="../css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
-<body class="theme-red">
+<body class="theme-green">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <p>Please wait...</p>
+            <p>Just hold on a sec...</p>
         </div>
     </div>
     <!-- #END# Page Loader -->

@@ -3,7 +3,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.php"> SUSTAINABLE URBAN AND RURAL WATER SUPPLY, SANITATION AND HYGIENE (SURWASH) </a>
+                <a class="navbar-brand" href="index.php">FACILITY MANAGEMENT SYSTEM </a>
             </div>
 
         </div>
@@ -45,7 +45,7 @@
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">playlist_add_check</i>
-                            <span>INDICATORS</span>
+                            <span>REGISTRATION</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
@@ -55,24 +55,24 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="indicate_2.php">
+                                <a href="create_unit.php">
                                     <i class="material-icons">assignment</i>
-                                    <span>People Provided with drinking water service Rural </span>
+                                    <span>Create Unit </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="indicate_3.php">
+                                <a href="create_office.php">
                                     <i class="material-icons">assignment</i>
-                                    <span>People Provided with drinking water service Urban </span>
+                                    <span>Create Office</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="indicate_2.php">
+                                <a href="create_asset.php">
                                     <i class="material-icons">assignment</i>
-                                    <span>People Provided with Improved Access to sanitation </span>
+                                    <span>Create Asset </span>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="indicate_4.php">
                                     <i class="material-icons">assignment</i>
                                     <span>People provided with Improved Access to sanitation Rural </span>
@@ -83,7 +83,7 @@
                                     <i class="material-icons">assignment</i>
                                     <span>Improved Access to sanitation Urban </span>
                                 </a>
-                            </li>
+                            </li> -->
                             
                         </ul>
                     </li>
@@ -163,7 +163,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2022 <a href="javascript:void(0);">SURWASH</a>
+                    &copy; 2022 <a href="javascript:void(0);">KSL</a>
                 </div>
                 <div class="version">
                     <b>Version: </b> 1.0.0

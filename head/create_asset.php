@@ -3,10 +3,10 @@
  $role = $_SESSION['role'];
  $user = $_SESSION['username'];
  if(!isset($_SESSION['username']) || $role!="Chairman"){
-   header('Location: /surwash');
+   header('Location: /ams');
  }
 
- include 'head1.php';
+ include 'head.php';
  include 'nav.php';
 
 
@@ -14,21 +14,25 @@
 
      $time=date("Y-m-d h:i") ;
 
-     if(isset($_POST['indicate'])){
+     if(isset($_POST['ksl_asset'])){
  //collecting form inputs using the specified method
- $state  = mysqli_real_escape_string($db, trim($_POST['state']));
- $programme  = mysqli_real_escape_string($db, trim($_POST['programme']));
- $project = mysqli_real_escape_string($db, trim($_POST['project']));
- $no_comm_benefit = mysqli_real_escape_string($db, trim($_POST['no_comm_benefit']));
- $no_male = mysqli_real_escape_string($db, trim($_POST['no_male']));
- $no_female = mysqli_real_escape_string($db, trim($_POST['no_female']));
+ $asset_no  = mysqli_real_escape_string($db, trim($_POST['asset_no']));
+ $asset_name  = mysqli_real_escape_string($db, trim($_POST['asset_name']));
+ $asset_category = mysqli_real_escape_string($db, trim($_POST['asset_category']));
+ $asset_type = mysqli_real_escape_string($db, trim($_POST['asset_type']));
+ $asset_maintenance_type = mysqli_real_escape_string($db, trim($_POST['asset_maintenance_type']));
+ $asset_periodic = mysqli_real_escape_string($db, trim($_POST['asset_periodic']));
+ $asset_description = mysqli_real_escape_string($db, trim($_POST['asset_description']));
  
  //check for empty field
- if(!empty($state) && !empty($programme) && !empty($project) && !empty($no_comm_benefit) && !empty($no_male) && !empty($no_female)){
+ if(!empty($asset_no) && !empty($asset_name) && !empty($asset_category) && !empty($asset_type) 
+ && !empty($asset_maintenance_type) && !empty($asset_periodic) && !empty($asset_description)){
 
      
      //check for duplicate
-     $check= "SELECT COUNT(*) FROM indicate WHERE state = '".$state."' && indicate_programme = '".$programme."' && est_no_male = '".$no_male."' && est_no_female = '".$no_female."'&& no_rural_comm_benefit = '".$no_comm_benefit."'&& indicate_project = '".$project."'";
+     $check= "SELECT COUNT(*) FROM ksl_asset WHERE asset_no = '".$asset_no."' && asset_name = '".$asset_name.
+     "' && asset_category = '".$asset_category."' && asset_type = '".$asset_type."'&& asset_maintenance_type
+      = '".$asset_maintenance_type."' &&asset_periodic = '".$asset_periodic."'  && asset_description = '".$asset_description."'";
 
 
      $sql = mysqli_query($db,$check);
@@ -38,13 +42,14 @@
      if($row['COUNT(*)'] == 0) {
 
          //insert values 
-         $query="INSERT INTO indicate (indicate, state, indicate_programme, no_rural_comm_benefit, indicate_project, est_no_male, est_no_female, user, indicate_date) VALUES('indicate-1', '$state', '$programme', '$no_comm_benefit', '$project', '$no_male', '$no_female',  '$user',  '$time')";
+         $query="INSERT INTO ksl_asset (asset_no, asset_name, asset_category, asset_type, asset_maintenance_type, asset_periodic, asset_description, user, date) 
+         VALUES('$asset_no', '$asset_name', '$asset_category', '$asset_type', '$asset_maintenance_type', '$asset_periodic',  '$user',  '$time')";
          
          $action= mysqli_query($db, $query);
             if($action){
                 $error="<div class='alert alert-success alert-dismissable'>
                 <button type='button' class='close' data-dismiss='alert'aria-hidden='true'>&times;</button>
-                        INDICATOR SAVED SUCCESSFULLY <br> 
+                        ASSET SAVED SUCCESSFULLY <br> 
                     </div> "; 
             }
             else{
@@ -83,7 +88,7 @@
                 <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>PEOPLE PROVIDED WITH BASIC DRINKING WATER SERVICE UNDER THE PROGRAM (NUMBER)</h2>
+                            <h2>ASSET REGISTRATION</h2>
                         </div>
 
                             <?php
@@ -93,51 +98,51 @@
                             ?>
 
                         <div class="body">
-                            <form id="form_validation" method="POST" action="indicate_2.php" name="indicate">
+                            <form id="form_validation" method="POST" action="create_asset.php" name="ksl_asset">
                                 
-                                <div class="form-group form-float form-line">
+                                <!-- <div class="form-group form-float form-line">
                                     <select class="form-control show-tick" name="state" required>
                                         <option >Please select a state</option>
                                         <?php
-                                            $state = mysqli_query($db, "SELECT name From state");  // Use select query here 
+                                            // $state = mysqli_query($db, "SELECT name From state");  // Use select query here 
 
-                                            while($data = mysqli_fetch_array($state))
-                                            {
-                                                echo "<option value='". $data['name'] ."'>" .$data['name'] ."</option>";  // displaying data in option menu
-                                            }   
+                                            // while($data = mysqli_fetch_array($state))
+                                            // {
+                                            //     echo "<option value='". $data['name'] ."'>" .$data['name'] ."</option>";  // displaying data in option menu
+                                            // }   
                                             ?>
 
                                     </select>
-                                </div>
+                                </div> -->
 
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="programme" required>
-                                        <label class="form-label"> PROGRAMME </label>
+                                        <input type="text" class="form-control" name="asset_no" required>
+                                        <label class="form-label"> ASSET ID </label>
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="project" >
-                                        <label class="form-label"> PROJECT </label>
+                                        <input type="text" class="form-control" name="asset_name" >
+                                        <label class="form-label"> ASSET NAME </label>
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" name="no_comm_benefit" required>
-                                        <label class="form-label"> NUMBER OF COMMUNITY BENEFITING </label>
+                                        <input type="number" class="form-control" name="asset_category" required>
+                                        <label class="form-label"> ASSET CATEGORY </label>
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" name="no_male" required>
-                                        <label class="form-label">EST NUMBER OF MALE</label>
+                                        <input type="number" class="form-control" name="asset_type" required>
+                                        <label class="form-label">ASSET TYPE</label>
                                     </div>                                    
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" name="no_female" >
-                                        <label class="form-label">EST NUMBER OF FEMALE</label>
+                                        <input type="number" class="form-control" name="asset_maintenance_type" >
+                                        <label class="form-label">ASSET MAINTENANCE TYPE</label>
                                     </div>                                    
                                 </div>                                
                                 <div class="form-group form-float">
@@ -147,7 +152,7 @@
                                     </div>
                                 </div>
                                 
-                                <button class="btn btn-primary waves-effect" type="submit" name="indicate">SAVE</button>
+                                <button class="btn btn-primary waves-effect" type="submit" name="ksl_asset">SAVE</button>
                             </form>
                         </div>
                     </div>
@@ -157,49 +162,6 @@
             
         </div>
     </section>
-<?php mysqli_close($db);  // close connection ?>
-    <!-- Jquery Core Js -->
-    <script src="../plugins/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core Js -->
-    <script src="../plugins/bootstrap/js/bootstrap.js"></script>
-
-    <!-- Select Plugin Js -->
-    <script src="../plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-    <!-- Bootstrap Colorpicker Js -->
-    <script src="../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-
-    <!-- Dropzone Plugin Js -->
-    <script src="../plugins/dropzone/dropzone.js"></script>
-
-    <!-- Input Mask Plugin Js -->
-    <script src="../plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
-
-    <!-- Multi Select Plugin Js -->
-    <script src="../plugins/multi-select/js/jquery.multi-select.js"></script>
-
-    <!-- Jquery Spinner Plugin Js -->
-    <script src="../plugins/jquery-spinner/js/jquery.spinner.js"></script>
-
-    <!-- Bootstrap Tags Input Plugin Js -->
-    <script src="../plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
-
-    <!-- noUISlider Plugin Js -->
-    <script src="../plugins/nouislider/nouislider.js"></script>
-
-    <!-- Waves Effect Plugin Js -->
-    <script src="../plugins/node-waves/waves.js"></script>
-
-    <!-- Custom Js -->
-    <script src="../js/admin.js"></script>
-    <script src="../js/pages/forms/advanced-form-elements.js"></script>
-
-    <!-- Demo Js -->
-    <script src="../js/demo.js"></script>
-</body>
-
-</html>
+    <?php
+     include'links.php';
+     ?>

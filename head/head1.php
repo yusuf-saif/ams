@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Store Officer</title>
+    <title>FACILITY MANAGER</title>
 
     <!-- Favicon-->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -35,7 +35,7 @@
     <!-- Bootstrap Spinner Css -->
     <link href="../plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
 
-    <!-- Bootstrap Tagsinput Css -->
+    <!-- Bootstrap Tags input Css -->
     <link href="../plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
 
     <!-- Bootstrap Select Css -->
@@ -51,7 +51,7 @@
     <link href="../css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
-<body class="theme-red">
+<body class="theme-green">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -65,6 +65,6 @@
                     </div>
                 </div>
             </div>
-            <p>Please wait...</p>
+            <p>Just hold on a sec...</p>
         </div>
     </div>

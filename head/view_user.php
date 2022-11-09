@@ -2,7 +2,7 @@
     session_start();
     $role = $_SESSION['role'];
     if(!isset($_SESSION['username']) || $role!="Chairman"){
-      header('Location: /surwash');
+      header('Location: /ams');
     }
 
     include '../conn.php';
