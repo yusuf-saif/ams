@@ -24,8 +24,8 @@
                             <i class="material-icons">playlist_add_check</i>
                         </div>
                         <div class="content">
-                            <div class="text">TOTAL INDICATORS</div>
-                            <div class="number count-to" data-from="0" data-to="<?php echo $receive_count?>" data-speed="5" data-fresh-interval="20"></div>
+                            <div class="text">TOTAL DEPARTMENT</div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $dept_count?>" data-speed="5" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -35,8 +35,8 @@
                             <i class="material-icons">help</i>
                         </div>
                         <div class="content">
-                            <div class="text">TOTAL COMMUNITIES</div>
-                            <div class="number count-to" data-from="0" data-to="<?php echo $dispatch_count?>" data-speed="5" data-fresh-interval="20"></div>
+                            <div class="text">TOTAL UNITS</div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $unit_count?>" data-speed="1" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -46,8 +46,8 @@
                             <i class="material-icons">forum</i>
                         </div>
                         <div class="content">
-                            <div class="text">TOTAL NUMBER BENEFIT</div>
-                            <div class="number count-to" data-from="0" data-to="<?php echo $store_count?>" data-speed="5" data-fresh-interval="20"></div>
+                            <div class="text">TOTAL OFFICES</div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $office_count?>" data-speed="5" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -57,8 +57,8 @@
                             <i class="material-icons">person_add</i>
                         </div>
                         <div class="content">
-                            <div class="text">TOTAL NUMBER OF USERS</div>
-                            <div class="number count-to" data-from="1" data-to="<?php echo $user_count?>" data-speed="5" data-fresh-interval="20"></div>
+                            <div class="text">TOTAL ASSETS</div>
+                            <div class="number count-to" data-from="1" data-to="<?php echo $asset_count?>" data-speed="5" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>

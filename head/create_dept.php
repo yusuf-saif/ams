@@ -92,21 +92,6 @@ if (isset($_POST['ksl_dept'])) {
                     <div class="body">
                         <form id="form_validation" method="POST" action="create_dept.php" name="ksl_dept">
 
-                            <!-- <div class="form-group form-float form-line">
-                                    <select class="form-control show-tick" name="state" required>
-                                        <option >Please select a state</option>
-                                        <?php
-                                        // $state = mysqli_query($db, "SELECT name From state");  // Use select query here 
-
-                                        // while($data = mysqli_fetch_array($state))
-                                        // {
-                                        //     echo "<option value='". $data['name'] ."'>" .$data['name'] ."</option>";  // displaying data in option menu
-                                        // }   
-                                        ?>
-
-                                    </select>
-                                </div> -->
-
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input type="text" class="form-control" name="dept_name" required>
@@ -126,7 +111,7 @@ if (isset($_POST['ksl_dept'])) {
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary waves-effect" type="submit" name="ksl_dept">SAVE</button>
+                            <button class="btn btn-primary waves-effect" type="submit" name="ksl_dept">CREATE DEPARTMENT</button>
                         </form>
                     </div>
                 </div>
@@ -135,6 +120,7 @@ if (isset($_POST['ksl_dept'])) {
         <!-- #END# Basic Validation -->
 
     </div>
+    
 </section>
 <?php
 // foreach ($_POST as $key => $value) {

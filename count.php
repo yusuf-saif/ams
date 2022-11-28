@@ -1,22 +1,22 @@
 <?php
     session_start();
     include "conn.php";
- $receive = mysqli_query($db, "SELECT * FROM indicate ;");  // query for receive items
- $dispatch = mysqli_query($db, "SELECT * FROM indicate;");  // query for dispatch items
- $store = mysqli_query($db, "SELECT * FROM indicate;");  // query for store number
- $user = mysqli_query($db, "SELECT * FROM usr;");  // query for user number
+ $dept = mysqli_query($db, "SELECT * FROM ksl_dept ;");  // query for receive items
+ $unit = mysqli_query($db, "SELECT * FROM ksl_unit;");  // query for dispatch items
+ $office = mysqli_query($db, "SELECT * FROM ksl_office;");  // query for store number
+ $asset = mysqli_query($db, "SELECT * FROM ksl_asset;");  // query for user number
 
 
-if($receive){
-    $receive_count = '0'; //mysqli_num_rows($receive);
+if($dept){
+    $dept_count = '5'; //mysqli_num_rows($receive);
 }
-if($dispatch){
-    $dispatch_count = '0'; //mysqli_num_rows($dispatch);
+if($unit){
+    $unit_count = '56';//mysqli_num_rows($unit);
 }
-if($store){
-    $store_count = '0'; //mysqli_num_rows($store);
+if($office){
+    $office_count = mysqli_num_rows($office);
 }
-if($user){
-    $user_count = mysqli_num_rows($user);
+if($asset){
+    $asset_count = mysqli_num_rows($asset);
 }
 
